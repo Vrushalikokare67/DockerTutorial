@@ -1,0 +1,145 @@
+vrushali@ubuntu:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+ubuntu       latest    ff0fea8310f3   4 days ago   72.8MB
+vrushali@ubuntu:~$ sudo docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+ae13dd578326: Pull complete 
+6c0ee9353e13: Pull complete 
+dca7733b187e: Pull complete 
+352e5a6cac26: Pull complete 
+9eaf108767c7: Pull complete 
+be0c016df0be: Pull complete 
+Digest: sha256:e1211ac17b29b585ed1aee166a17fad63d344bc973bc63849d74c6452d549b3e
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+vrushali@ubuntu:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+ubuntu       latest    ff0fea8310f3   4 days ago   72.8MB
+nginx        latest    f2f70adc5d89   4 days ago   142MB
+vrushali@ubuntu:~$ sudo docker images --help
+
+Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
+
+List images
+
+Options:
+  -a, --all             Show all images (default hides intermediate images)
+      --digests         Show digests
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Pretty-print images using a Go template
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only show image IDs
+vrushali@ubuntu:~$ sudo docker images -a
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+ubuntu       latest    ff0fea8310f3   4 days ago   72.8MB
+nginx        latest    f2f70adc5d89   4 days ago   142MB
+vrushali@ubuntu:~$ sudo docker run ubuntu 
+vrushali@ubuntu:~$ sudo docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                      PORTS     NAMES
+b076a8be2234   ubuntu    "bash"    17 seconds ago   Exited (0) 15 seconds ago             cranky_moser
+2b2aceb0d015   ubuntu    "bash"    14 minutes ago   Up 14 minutes                         iauro5
+vrushali@ubuntu:~$ sudo docker run -itd --name=PUCSD ubuntu
+4794597f16ab216fee9b5b56792644a28033e30b1919d6d25c2cd963bd93bfc5
+vrushali@ubuntu:~$ sudo docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED              STATUS                          PORTS     NAMES
+4794597f16ab   ubuntu    "bash"    7 seconds ago        Up 6 seconds                              PUCSD
+b076a8be2234   ubuntu    "bash"    About a minute ago   Exited (0) About a minute ago             cranky_moser
+2b2aceb0d015   ubuntu    "bash"    15 minutes ago       Up 15 minutes                             iauro5
+vrushali@ubuntu:~$ sudo docker inspect ubuntu
+[
+    {
+        "Id": "sha256:ff0fea8310f3957d9b1e6ba494f3e4b63cb348c76160c6c15578e65995ffaa87",
+        "RepoTags": [
+            "ubuntu:latest"
+        ],
+        "RepoDigests": [
+            "ubuntu@sha256:bea6d19168bbfd6af8d77c2cc3c572114eb5d113e6f422573c93cb605a0e2ffb"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2022-03-18T05:30:40.61165091Z",
+        "Container": "324801e0af57998f2b9ed133254b92497c04099f0d2d2a3254b6ca5ff71404a9",
+        "ContainerConfig": {
+            "Hostname": "324801e0af57",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"bash\"]"
+            ],
+            "Image": "sha256:7e6eef8c9f2c4b02724217d8aaee5d55010eb3fa52b44525b4e5634f5147355d",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "20.10.12",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "sha256:7e6eef8c9f2c4b02724217d8aaee5d55010eb3fa52b44525b4e5634f5147355d",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 72759731,
+        "VirtualSize": 72759731,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/195a0088d9419050c86c18ae4809f64f90d87f02e6c78eee502a662ff25f3442/merged",
+                "UpperDir": "/var/lib/docker/overlay2/195a0088d9419050c86c18ae4809f64f90d87f02e6c78eee502a662ff25f3442/diff",
+                "WorkDir": "/var/lib/docker/overlay2/195a0088d9419050c86c18ae4809f64f90d87f02e6c78eee502a662ff25f3442/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:867d0767a47c392f80acb51572851923d6d3e55289828b0cd84a96ba342660c7"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+
+vrushali@ubuntu:~$ sudo docker images -q
+ff0fea8310f3
+f2f70adc5d89
+
+vrushali@ubuntu:~$ sudo docker images -a
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+ubuntu       latest    ff0fea8310f3   4 days ago   72.8MB
+nginx        latest    f2f70adc5d89   4 days ago   142MB
