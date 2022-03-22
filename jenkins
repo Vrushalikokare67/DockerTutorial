@@ -1,0 +1,678 @@
+vrushali@ubuntu:~$ sudo docker pull jenkins
+[sudo] password for vrushali: 
+Using default tag: latest
+Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown
+vrushali@ubuntu:~$ sudo apt-get update
+[sudo] password for vrushali: 
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Hit:2 http://us.archive.ubuntu.com/ubuntu focal InRelease                      
+Get:3 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40.7 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [66.5 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,468 B]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1,669 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [315 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [278 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [881 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [126 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [390 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [24.5 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]
+Get:16 http://us.archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [8,004 B]
+Get:17 http://us.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30.8 kB]
+Fetched 4,168 kB in 24s (174 kB/s)                                             
+Reading package lists... Done
+vrushali@ubuntu:~$ sudo apt-get install jenkins
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package jenkins is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'jenkins' has no installation candidate
+vrushali@ubuntu:~$ sudo apt-get install openjdk-8-jdk
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates-java fonts-dejavu-extra java-common libatk-wrapper-java
+  libatk-wrapper-java-jni libice-dev libpthread-stubs0-dev libsm-dev
+  libx11-dev libxau-dev libxcb1-dev libxdmcp-dev libxt-dev
+  openjdk-8-jdk-headless openjdk-8-jre openjdk-8-jre-headless
+  x11proto-core-dev x11proto-dev xorg-sgml-doctools xtrans-dev
+Suggested packages:
+  default-jre libice-doc libsm-doc libx11-doc libxcb-doc libxt-doc
+  openjdk-8-demo openjdk-8-source visualvm icedtea-8-plugin
+  fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei
+  fonts-wqy-zenhei
+The following NEW packages will be installed:
+  ca-certificates-java fonts-dejavu-extra java-common libatk-wrapper-java
+  libatk-wrapper-java-jni libice-dev libpthread-stubs0-dev libsm-dev
+  libx11-dev libxau-dev libxcb1-dev libxdmcp-dev libxt-dev openjdk-8-jdk
+  openjdk-8-jdk-headless openjdk-8-jre openjdk-8-jre-headless
+  x11proto-core-dev x11proto-dev xorg-sgml-doctools xtrans-dev
+0 upgraded, 21 newly installed, 0 to remove and 19 not upgraded.
+Need to get 43.5 MB of archives.
+After this operation, 162 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu focal/main amd64 java-common all 0.72 [6,816 B]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 openjdk-8-jre-headless amd64 8u312-b07-0ubuntu1~20.04 [28.2 MB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal/main amd64 ca-certificates-java all 20190405ubuntu1 [12.2 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal/main amd64 fonts-dejavu-extra all 2.37-1 [1,953 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libatk-wrapper-java all 0.37.1-1 [53.0 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libatk-wrapper-java-jni amd64 0.37.1-1 [45.1 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal/main amd64 xorg-sgml-doctools all 1:1.11-1 [12.9 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal/main amd64 x11proto-dev all 2019.2-1ubuntu1 [594 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal/main amd64 x11proto-core-dev all 2019.2-1ubuntu1 [2,620 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libice-dev amd64 2:1.0.10-0ubuntu1 [47.8 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libpthread-stubs0-dev amd64 0.4-1 [5,384 B]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libsm-dev amd64 2:1.2.3-1 [17.0 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxau-dev amd64 1:1.0.9-0ubuntu1 [9,552 B]
+Get:14 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxdmcp-dev amd64 1:1.1.3-0ubuntu1 [25.3 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu focal/main amd64 xtrans-dev all 1.4.0-1 [68.9 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxcb1-dev amd64 1.14-2 [80.5 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libx11-dev amd64 2:1.6.9-2ubuntu1.2 [647 kB]
+Get:18 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxt-dev amd64 1:1.1.5-1 [395 kB]
+Get:19 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 openjdk-8-jre amd64 8u312-b07-0ubuntu1~20.04 [69.9 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 openjdk-8-jdk-headless amd64 8u312-b07-0ubuntu1~20.04 [8,295 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 openjdk-8-jdk amd64 8u312-b07-0ubuntu1~20.04 [2,969 kB]
+Fetched 43.5 MB in 4min 29s (162 kB/s)                                         
+Selecting previously unselected package java-common.
+(Reading database ... 158382 files and directories currently installed.)
+Preparing to unpack .../00-java-common_0.72_all.deb ...
+Unpacking java-common (0.72) ...
+Selecting previously unselected package openjdk-8-jre-headless:amd64.
+Preparing to unpack .../01-openjdk-8-jre-headless_8u312-b07-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-8-jre-headless:amd64 (8u312-b07-0ubuntu1~20.04) ...
+Selecting previously unselected package ca-certificates-java.
+Preparing to unpack .../02-ca-certificates-java_20190405ubuntu1_all.deb ...
+Unpacking ca-certificates-java (20190405ubuntu1) ...
+Selecting previously unselected package fonts-dejavu-extra.
+Preparing to unpack .../03-fonts-dejavu-extra_2.37-1_all.deb ...
+Unpacking fonts-dejavu-extra (2.37-1) ...
+Selecting previously unselected package libatk-wrapper-java.
+Preparing to unpack .../04-libatk-wrapper-java_0.37.1-1_all.deb ...
+Unpacking libatk-wrapper-java (0.37.1-1) ...
+Selecting previously unselected package libatk-wrapper-java-jni:amd64.
+Preparing to unpack .../05-libatk-wrapper-java-jni_0.37.1-1_amd64.deb ...
+Unpacking libatk-wrapper-java-jni:amd64 (0.37.1-1) ...
+Selecting previously unselected package xorg-sgml-doctools.
+Preparing to unpack .../06-xorg-sgml-doctools_1%3a1.11-1_all.deb ...
+Unpacking xorg-sgml-doctools (1:1.11-1) ...
+Selecting previously unselected package x11proto-dev.
+Preparing to unpack .../07-x11proto-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package x11proto-core-dev.
+Preparing to unpack .../08-x11proto-core-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-core-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package libice-dev:amd64.
+Preparing to unpack .../09-libice-dev_2%3a1.0.10-0ubuntu1_amd64.deb ...
+Unpacking libice-dev:amd64 (2:1.0.10-0ubuntu1) ...
+Selecting previously unselected package libpthread-stubs0-dev:amd64.
+Preparing to unpack .../10-libpthread-stubs0-dev_0.4-1_amd64.deb ...
+Unpacking libpthread-stubs0-dev:amd64 (0.4-1) ...
+Selecting previously unselected package libsm-dev:amd64.
+Preparing to unpack .../11-libsm-dev_2%3a1.2.3-1_amd64.deb ...
+Unpacking libsm-dev:amd64 (2:1.2.3-1) ...
+Selecting previously unselected package libxau-dev:amd64.
+Preparing to unpack .../12-libxau-dev_1%3a1.0.9-0ubuntu1_amd64.deb ...
+Unpacking libxau-dev:amd64 (1:1.0.9-0ubuntu1) ...
+Selecting previously unselected package libxdmcp-dev:amd64.
+Preparing to unpack .../13-libxdmcp-dev_1%3a1.1.3-0ubuntu1_amd64.deb ...
+Unpacking libxdmcp-dev:amd64 (1:1.1.3-0ubuntu1) ...
+Selecting previously unselected package xtrans-dev.
+Preparing to unpack .../14-xtrans-dev_1.4.0-1_all.deb ...
+Unpacking xtrans-dev (1.4.0-1) ...
+Selecting previously unselected package libxcb1-dev:amd64.
+Preparing to unpack .../15-libxcb1-dev_1.14-2_amd64.deb ...
+Unpacking libxcb1-dev:amd64 (1.14-2) ...
+Selecting previously unselected package libx11-dev:amd64.
+Preparing to unpack .../16-libx11-dev_2%3a1.6.9-2ubuntu1.2_amd64.deb ...
+Unpacking libx11-dev:amd64 (2:1.6.9-2ubuntu1.2) ...
+Selecting previously unselected package libxt-dev:amd64.
+Preparing to unpack .../17-libxt-dev_1%3a1.1.5-1_amd64.deb ...
+Unpacking libxt-dev:amd64 (1:1.1.5-1) ...
+Selecting previously unselected package openjdk-8-jre:amd64.
+Preparing to unpack .../18-openjdk-8-jre_8u312-b07-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-8-jre:amd64 (8u312-b07-0ubuntu1~20.04) ...
+Selecting previously unselected package openjdk-8-jdk-headless:amd64.
+Preparing to unpack .../19-openjdk-8-jdk-headless_8u312-b07-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-8-jdk-headless:amd64 (8u312-b07-0ubuntu1~20.04) ...
+Selecting previously unselected package openjdk-8-jdk:amd64.
+Preparing to unpack .../20-openjdk-8-jdk_8u312-b07-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-8-jdk:amd64 (8u312-b07-0ubuntu1~20.04) ...
+Setting up java-common (0.72) ...
+Setting up libpthread-stubs0-dev:amd64 (0.4-1) ...
+Setting up xtrans-dev (1.4.0-1) ...
+Setting up fonts-dejavu-extra (2.37-1) ...
+Setting up xorg-sgml-doctools (1:1.11-1) ...
+Setting up libatk-wrapper-java (0.37.1-1) ...
+Setting up libatk-wrapper-java-jni:amd64 (0.37.1-1) ...
+Setting up openjdk-8-jre-headless:amd64 (8u312-b07-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Setting up ca-certificates-java (20190405ubuntu1) ...
+head: cannot open '/etc/ssl/certs/java/cacerts' for reading: No such file or directory
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:Security_Communication_Root_CA.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:Hongkong_Post_Root_CA_3.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+Adding debian:TrustCor_RootCert_CA-1.pem
+Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:Certigna.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:e-Szigno_Root_CA_2017.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:emSign_Root_CA_-_C1.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:NAVER_Global_Root_Certification_Authority.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+Adding debian:EC-ACC.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:Trustwave_Global_Certification_Authority.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:ISRG_Root_X1.pem
+Adding debian:Izenpe.com.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:Network_Solutions_Certificate_Authority.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:Trustwave_Global_ECC_P384_Certification_Authority.pem
+Adding debian:GTS_Root_R4.pem
+Adding debian:TrustCor_RootCert_CA-2.pem
+Adding debian:GlobalSign_Root_CA_-_R2.pem
+Adding debian:emSign_ECC_Root_CA_-_G3.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:Trustwave_Global_ECC_P256_Certification_Authority.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:certSIGN_Root_CA_G2.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:TrustCor_ECA-1.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:Microsoft_ECC_Root_Certificate_Authority_2017.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:GTS_Root_R1.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:emSign_Root_CA_-_G1.pem
+Adding debian:GTS_Root_R3.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:Global_Chambersign_Root_-_2008.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:Microsoft_RSA_Root_Certificate_Authority_2017.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:UCA_Global_G2_Root.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G4.pem
+Adding debian:GlobalSign_Root_CA_-_R6.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:ACCVRAIZ1.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:QuoVadis_Root_CA.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:Certigna_Root_CA.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:Cybertrust_Global_Root.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:E-Tugra_Certification_Authority.pem
+Adding debian:ssl-cert-snakeoil.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:Sonera_Class_2_Root_CA.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:emSign_ECC_Root_CA_-_C3.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:GTS_Root_R2.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+Adding debian:UCA_Extended_Validation_Root.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:Trustis_FPS_Root_CA.pem
+done.
+Setting up openjdk-8-jre:amd64 (8u312-b07-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/policytool to provide /usr/bin/policytool (policytool) in auto mode
+Setting up openjdk-8-jdk-headless:amd64 (8u312-b07-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/idlj to provide /usr/bin/idlj (idlj) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/wsimport to provide /usr/bin/wsimport (wsimport) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/rmic to provide /usr/bin/rmic (rmic) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jsadebugd to provide /usr/bin/jsadebugd (jsadebugd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/native2ascii to provide /usr/bin/native2ascii (native2ascii) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javah to provide /usr/bin/javah (javah) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/hsdb to provide /usr/bin/hsdb (hsdb) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/clhsdb to provide /usr/bin/clhsdb (clhsdb) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/xjc to provide /usr/bin/xjc (xjc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/schemagen to provide /usr/bin/schemagen (schemagen) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/extcheck to provide /usr/bin/extcheck (extcheck) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jhat to provide /usr/bin/jhat (jhat) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/wsgen to provide /usr/bin/wsgen (wsgen) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode
+Setting up openjdk-8-jdk:amd64 (8u312-b07-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/appletviewer to provide /usr/bin/appletviewer (appletviewer) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode
+Processing triggers for fontconfig (2.13.1-2ubuntu3) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for ca-certificates (20210119~20.04.2) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+
+done.
+done.
+Processing triggers for sgml-base (1.29.1) ...
+Setting up x11proto-dev (2019.2-1ubuntu1) ...
+Setting up libxau-dev:amd64 (1:1.0.9-0ubuntu1) ...
+Setting up libice-dev:amd64 (2:1.0.10-0ubuntu1) ...
+Setting up libsm-dev:amd64 (2:1.2.3-1) ...
+Setting up libxdmcp-dev:amd64 (1:1.1.3-0ubuntu1) ...
+Setting up x11proto-core-dev (2019.2-1ubuntu1) ...
+Setting up libxcb1-dev:amd64 (1.14-2) ...
+Setting up libx11-dev:amd64 (2:1.6.9-2ubuntu1.2) ...
+Setting up libxt-dev:amd64 (1:1.1.5-1) ...
+vrushali@ubuntu:~$ java -version
+openjdk version "1.8.0_312"
+OpenJDK Runtime Environment (build 1.8.0_312-8u312-b07-0ubuntu1~20.04-b07)
+OpenJDK 64-Bit Server VM (build 25.312-b07, mixed mode)
+
+
+vrushali@ubuntu:~$ sudo apt install git
+[sudo] password for vrushali: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+git is already the newest version (1:2.25.1-1ubuntu3.2).
+git set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 19 not upgraded.
+
+
+vrushali@ubuntu:~$ git --version
+git version 2.25.1
+
+
+vrushali@ubuntu:~$ sudo apt install maven
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libaopalliance-java libapache-pom-java libatinject-jsr330-api-java
+  libcdi-api-java libcommons-cli-java libcommons-io-java libcommons-lang3-java
+  libcommons-parent-java libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libguava-java libguice-java
+  libhawtjni-runtime-java libjansi-java libjansi-native-java libjsr305-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java
+  libwagon-http-shaded-java libwagon-provider-api-java
+Suggested packages:
+  libaopalliance-java-doc libatinject-jsr330-api-java-doc libservlet3.1-java
+  libcommons-io-java-doc libcommons-lang3-java-doc libasm-java libcglib-java
+  libjsr305-java-doc libmaven-shared-utils-java-doc liblogback-java
+  libplexus-cipher-java-doc libplexus-classworlds-java-doc
+  libplexus-sec-dispatcher-java-doc libplexus-utils2-java-doc junit4 testng
+  libcommons-logging-java liblog4j1.2-java
+The following NEW packages will be installed:
+  libaopalliance-java libapache-pom-java libatinject-jsr330-api-java
+  libcdi-api-java libcommons-cli-java libcommons-io-java libcommons-lang3-java
+  libcommons-parent-java libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libguava-java libguice-java
+  libhawtjni-runtime-java libjansi-java libjansi-native-java libjsr305-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java
+  libwagon-http-shaded-java libwagon-provider-api-java maven
+0 upgraded, 33 newly installed, 0 to remove and 19 not upgraded.
+Need to get 9,208 kB of archives.
+After this operation, 12.1 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libapache-pom-java all 18-1 [4,720 B]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libatinject-jsr330-api-java all 1.0+ds1-5 [5,348 B]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libgeronimo-interceptor-3.0-spec-java all 1.0.1-4fakesync [8,616 B]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libcdi-api-java all 1.2-2 [54.5 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libcommons-cli-java all 1.4-1 [53.8 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libcommons-parent-java all 43-1 [10.8 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 libcommons-io-java all 2.6-2ubuntu0.20.04.1 [198 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libcommons-lang3-java all 3.8-2 [458 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libgeronimo-annotation-1.3-spec-java all 1.0-1 [10.7 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libjsr305-java all 0.1~+svn49-11 [27.0 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libguava-java all 19.0-1 [2,028 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libaopalliance-java all 20070526-6 [9,084 B]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libguice-java all 4.2.1-1 [962 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libhawtjni-runtime-java all 1.17-1 [28.8 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libjansi-native-java all 1.8-1 [23.8 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libjansi-java all 1.18-1 [56.8 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libmaven-parent-java all 31-2 [5,140 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libplexus-utils2-java all 3.3.0-1 [250 kB]
+Get:19 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libwagon-provider-api-java all 3.3.4-1 [48.5 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libmaven-resolver-java all 1.4.1-1 [555 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libmaven-shared-utils-java all 3.3.0-1 [149 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libplexus-cipher-java all 1.7-3 [15.1 kB]
+Get:23 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libplexus-classworlds-java all 2.6.0-1 [49.4 kB]
+Get:24 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libplexus-component-annotations-java all 2.1.0-1 [6,564 B]
+Get:25 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libplexus-interpolation-java all 1.26-1 [76.8 kB]
+Get:26 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libplexus-sec-dispatcher-java all 1.4-4 [28.1 kB]
+Get:27 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libslf4j-java all 1.7.25-3 [141 kB]
+Get:28 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libsisu-inject-java all 0.3.3-1 [347 kB]
+Get:29 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libsisu-plexus-java all 0.3.3-3 [182 kB]
+Get:30 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libmaven3-core-java all 3.6.3-1 [1,535 kB]
+Get:31 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libwagon-file-java all 3.3.4-1 [7,928 B]
+Get:32 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libwagon-http-shaded-java all 3.3.4-1 [1,855 kB]
+Get:33 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 maven all 3.6.3-1 [17.8 kB]
+Fetched 9,208 kB in 56s (165 kB/s)                                             
+Extracting templates from packages: 100%
+Selecting previously unselected package libapache-pom-java.
+(Reading database ... 159443 files and directories currently installed.)
+Preparing to unpack .../00-libapache-pom-java_18-1_all.deb ...
+Unpacking libapache-pom-java (18-1) ...
+Selecting previously unselected package libatinject-jsr330-api-java.
+Preparing to unpack .../01-libatinject-jsr330-api-java_1.0+ds1-5_all.deb ...
+Unpacking libatinject-jsr330-api-java (1.0+ds1-5) ...
+Selecting previously unselected package libgeronimo-interceptor-3.0-spec-java.
+Preparing to unpack .../02-libgeronimo-interceptor-3.0-spec-java_1.0.1-4fakesync
+_all.deb ...
+Unpacking libgeronimo-interceptor-3.0-spec-java (1.0.1-4fakesync) ...
+Selecting previously unselected package libcdi-api-java.
+Preparing to unpack .../03-libcdi-api-java_1.2-2_all.deb ...
+Unpacking libcdi-api-java (1.2-2) ...
+Selecting previously unselected package libcommons-cli-java.
+Preparing to unpack .../04-libcommons-cli-java_1.4-1_all.deb ...
+Unpacking libcommons-cli-java (1.4-1) ...
+Selecting previously unselected package libcommons-parent-java.
+Preparing to unpack .../05-libcommons-parent-java_43-1_all.deb ...
+Unpacking libcommons-parent-java (43-1) ...
+Selecting previously unselected package libcommons-io-java.
+Preparing to unpack .../06-libcommons-io-java_2.6-2ubuntu0.20.04.1_all.deb ...
+Unpacking libcommons-io-java (2.6-2ubuntu0.20.04.1) ...
+Selecting previously unselected package libcommons-lang3-java.
+Preparing to unpack .../07-libcommons-lang3-java_3.8-2_all.deb ...
+Unpacking libcommons-lang3-java (3.8-2) ...
+Selecting previously unselected package libgeronimo-annotation-1.3-spec-java.
+Preparing to unpack .../08-libgeronimo-annotation-1.3-spec-java_1.0-1_all.deb ..
+.
+Unpacking libgeronimo-annotation-1.3-spec-java (1.0-1) ...
+Selecting previously unselected package libjsr305-java.
+Preparing to unpack .../09-libjsr305-java_0.1~+svn49-11_all.deb ...
+Unpacking libjsr305-java (0.1~+svn49-11) ...
+Selecting previously unselected package libguava-java.
+Preparing to unpack .../10-libguava-java_19.0-1_all.deb ...
+Unpacking libguava-java (19.0-1) ...
+Selecting previously unselected package libaopalliance-java.
+Preparing to unpack .../11-libaopalliance-java_20070526-6_all.deb ...
+Unpacking libaopalliance-java (20070526-6) ...
+Selecting previously unselected package libguice-java.
+Preparing to unpack .../12-libguice-java_4.2.1-1_all.deb ...
+Unpacking libguice-java (4.2.1-1) ...
+Selecting previously unselected package libhawtjni-runtime-java.
+Preparing to unpack .../13-libhawtjni-runtime-java_1.17-1_all.deb ...
+Unpacking libhawtjni-runtime-java (1.17-1) ...
+Selecting previously unselected package libjansi-native-java.
+Preparing to unpack .../14-libjansi-native-java_1.8-1_all.deb ...
+Unpacking libjansi-native-java (1.8-1) ...
+Selecting previously unselected package libjansi-java.
+Preparing to unpack .../15-libjansi-java_1.18-1_all.deb ...
+Unpacking libjansi-java (1.18-1) ...
+Selecting previously unselected package libmaven-parent-java.
+Preparing to unpack .../16-libmaven-parent-java_31-2_all.deb ...
+Unpacking libmaven-parent-java (31-2) ...
+Selecting previously unselected package libplexus-utils2-java.
+Preparing to unpack .../17-libplexus-utils2-java_3.3.0-1_all.deb ...
+Unpacking libplexus-utils2-java (3.3.0-1) ...
+Selecting previously unselected package libwagon-provider-api-java.
+Preparing to unpack .../18-libwagon-provider-api-java_3.3.4-1_all.deb ...
+Unpacking libwagon-provider-api-java (3.3.4-1) ...
+Selecting previously unselected package libmaven-resolver-java.
+Preparing to unpack .../19-libmaven-resolver-java_1.4.1-1_all.deb ...
+Unpacking libmaven-resolver-java (1.4.1-1) ...
+Selecting previously unselected package libmaven-shared-utils-java.
+Preparing to unpack .../20-libmaven-shared-utils-java_3.3.0-1_all.deb ...
+Unpacking libmaven-shared-utils-java (3.3.0-1) ...
+Selecting previously unselected package libplexus-cipher-java.
+Preparing to unpack .../21-libplexus-cipher-java_1.7-3_all.deb ...
+Unpacking libplexus-cipher-java (1.7-3) ...
+Selecting previously unselected package libplexus-classworlds-java.
+Preparing to unpack .../22-libplexus-classworlds-java_2.6.0-1_all.deb ...
+Unpacking libplexus-classworlds-java (2.6.0-1) ...
+Selecting previously unselected package libplexus-component-annotations-java.
+Preparing to unpack .../23-libplexus-component-annotations-java_2.1.0-1_all.deb 
+...
+Unpacking libplexus-component-annotations-java (2.1.0-1) ...
+Selecting previously unselected package libplexus-interpolation-java.
+Preparing to unpack .../24-libplexus-interpolation-java_1.26-1_all.deb ...
+Unpacking libplexus-interpolation-java (1.26-1) ...
+Selecting previously unselected package libplexus-sec-dispatcher-java.
+Preparing to unpack .../25-libplexus-sec-dispatcher-java_1.4-4_all.deb ...
+Unpacking libplexus-sec-dispatcher-java (1.4-4) ...
+Selecting previously unselected package libslf4j-java.
+Preparing to unpack .../26-libslf4j-java_1.7.25-3_all.deb ...
+Unpacking libslf4j-java (1.7.25-3) ...
+Selecting previously unselected package libsisu-inject-java.
+Preparing to unpack .../27-libsisu-inject-java_0.3.3-1_all.deb ...
+Unpacking libsisu-inject-java (0.3.3-1) ...
+Selecting previously unselected package libsisu-plexus-java.
+Preparing to unpack .../28-libsisu-plexus-java_0.3.3-3_all.deb ...
+Unpacking libsisu-plexus-java (0.3.3-3) ...
+Selecting previously unselected package libmaven3-core-java.
+Preparing to unpack .../29-libmaven3-core-java_3.6.3-1_all.deb ...
+Unpacking libmaven3-core-java (3.6.3-1) ...
+Selecting previously unselected package libwagon-file-java.
+Preparing to unpack .../30-libwagon-file-java_3.3.4-1_all.deb ...
+Unpacking libwagon-file-java (3.3.4-1) ...
+Selecting previously unselected package libwagon-http-shaded-java.
+Preparing to unpack .../31-libwagon-http-shaded-java_3.3.4-1_all.deb ...
+Unpacking libwagon-http-shaded-java (3.3.4-1) ...
+Selecting previously unselected package maven.
+Preparing to unpack .../32-maven_3.6.3-1_all.deb ...
+Unpacking maven (3.6.3-1) ...
+Setting up libslf4j-java (1.7.25-3) ...
+Setting up libplexus-utils2-java (3.3.0-1) ...
+Setting up libplexus-classworlds-java (2.6.0-1) ...
+Setting up libjsr305-java (0.1~+svn49-11) ...
+Setting up libaopalliance-java (20070526-6) ...
+Setting up libcommons-cli-java (1.4-1) ...
+Setting up libplexus-component-annotations-java (2.1.0-1) ...
+Setting up libplexus-cipher-java (1.7-3) ...
+Setting up libgeronimo-annotation-1.3-spec-java (1.0-1) ...
+Setting up libgeronimo-interceptor-3.0-spec-java (1.0.1-4fakesync) ...
+Setting up libapache-pom-java (18-1) ...
+Setting up libatinject-jsr330-api-java (1.0+ds1-5) ...
+Setting up libplexus-interpolation-java (1.26-1) ...
+Setting up libplexus-sec-dispatcher-java (1.4-4) ...
+Setting up libwagon-http-shaded-java (3.3.4-1) ...
+Setting up libcdi-api-java (1.2-2) ...
+Setting up libhawtjni-runtime-java (1.17-1) ...
+Setting up libwagon-provider-api-java (3.3.4-1) ...
+Setting up libmaven-parent-java (31-2) ...
+Setting up libcommons-parent-java (43-1) ...
+Setting up libmaven-resolver-java (1.4.1-1) ...
+Setting up libguava-java (19.0-1) ...
+Setting up libcommons-lang3-java (3.8-2) ...
+Setting up libjansi-native-java (1.8-1) ...
+Setting up libwagon-file-java (3.3.4-1) ...
+Setting up libcommons-io-java (2.6-2ubuntu0.20.04.1) ...
+Setting up libguice-java (4.2.1-1) ...
+Setting up libjansi-java (1.18-1) ...
+Setting up libmaven-shared-utils-java (3.3.0-1) ...
+Setting up libsisu-inject-java (0.3.3-1) ...
+Setting up libsisu-plexus-java (0.3.3-3) ...
+Setting up libmaven3-core-java (3.6.3-1) ...
+Setting up maven (3.6.3-1) ...
+update-alternatives: using /usr/share/maven/bin/mvn to provide /usr/bin/mvn (mvn
+) in auto mode
+vrushali@ubuntu:~$ mvn -version
+Apache Maven 3.6.3
+Maven home: /usr/share/maven
+Java version: 1.8.0_312, vendor: Private Build, runtime: /usr/lib/jvm/java-8-openjdk-amd64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.13.0-35-generic", arch: "amd64", family: "unix"
+
+
+vrushali@ubuntu:~$ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+OK
+
+
+vrushali@ubuntu:~$ sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+
+vrushali@ubuntu:~$ sudo apt update
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease                                                                                            
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease                                                                                        
+Hit:3 http://us.archive.ubuntu.com/ubuntu focal InRelease
+Get:4 https://pkg.jenkins.io/debian-stable binary/ Release [2,044 B]
+Get:5 https://pkg.jenkins.io/debian-stable binary/ Release.gpg [833 B]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:7 https://pkg.jenkins.io/debian-stable binary/ Packages [21.6 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [278 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [390 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]                                                                 
+Get:12 http://us.archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7,968 B]                                                                   
+Get:13 http://us.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30.8 kB]                                                               
+Fetched 955 kB in 8s (114 kB/s)                                                                                                                                   
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+19 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+vrushali@ubuntu:~$ sudo apt-get install jenkins
+[sudo] password for vrushali: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+jenkins is already the newest version (2.332.1).
+0 upgraded, 0 newly installed, 0 to remove and 19 not upgraded.
+1 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Setting up jenkins (2.332.1) ...
+Job for jenkins.service failed because a timeout was exceeded.
+See "systemctl status jenkins.service" and "journalctl -xe" for details.
+invoke-rc.d: initscript jenkins, action "start" failed.
+● jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
+     Active: activating (auto-restart) (Result: timeout) since Tue 2022-03-22 04:05:25 PDT; 15ms ago
+    Process: 9934 ExecStart=/usr/bin/jenkins (code=exited, status=143)
+   Main PID: 9934 (code=exited, status=143)
+     Status: "Jenkins stopped"
+dpkg: error processing package jenkins (--configure):
+ installed jenkins package post-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ jenkins
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+
+vrushali@ubuntu:~$ sudo systemctl status jenkins
+● jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
+     Active: activating (start) since Tue 2022-03-22 04:05:25 PDT; 44s ago
+   Main PID: 10365 (java)
+      Tasks: 41 (limit: 2250)
+     Memory: 236.5M
+     CGroup: /system.slice/jenkins.service
+             └─10365 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080
+
+Mar 22 04:05:37 ubuntu jenkins[10365]: *************************************************************
+Mar 22 04:05:37 ubuntu jenkins[10365]: *************************************************************
+Mar 22 04:05:37 ubuntu jenkins[10365]: *************************************************************
+Mar 22 04:05:37 ubuntu jenkins[10365]: Jenkins initial setup is required. An admin user has been created and a password generated.
+Mar 22 04:05:37 ubuntu jenkins[10365]: Please use the following password to proceed to installation:
+Mar 22 04:05:37 ubuntu jenkins[10365]: dfd5a483470249cfb9678f8e37d32b49
+Mar 22 04:05:37 ubuntu jenkins[10365]: This may also be found at: /var/lib/jenkins/secrets/initialAdminPassword
+Mar 22 04:05:37 ubuntu jenkins[10365]: *************************************************************
+Mar 22 04:05:37 ubuntu jenkins[10365]: *************************************************************
+Mar 22 04:05:37 ubuntu jenkins[10365]: *************************************************************
+
+vrushali@ubuntu:~$ sudo docker volume create myjenkins
+myjenkins
+
+
+vrushali@ubuntu:~$ sudo docker volume ls
+DRIVER    VOLUME NAME
+local     myjenkins
