@@ -1,0 +1,227 @@
+Starting "default"...
+(default) Waiting for an IP...
+Machine "default" was started.
+Waiting for SSH to be available...
+Detecting the provisioner...
+Started machines may have new IP addresses. You may need to re-run the `docker-machine env` command.
+Regenerate TLS machine certs?  Warning: this is irreversible. (y/n): Regenerating TLS certificates
+Waiting for SSH to be available...
+Detecting the provisioner...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+
+
+
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+           \______ o           __/
+             \    \         __/
+              \____\_______/
+
+docker is configured to use the default machine with IP 192.168.99.100
+For help getting started, check out the docs at https://docs.docker.com
+
+
+Start interactive shell
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker images
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+ubuntu                 latest              ff0fea8310f3        4 days ago          72.8MB
+node-docker-tutorial   latest              9563e47c43f8        4 weeks ago         189MB
+mysql                  latest              17b062d639f4        4 weeks ago         519MB
+postgres               latest              6a3c44872108        5 weeks ago         374MB
+mongo                  latest              5285cb69ea55        6 weeks ago         698MB
+ubuntu                 <none>              54c9d81cbb44        6 weeks ago         72.8MB
+nginx                  latest              c316d5a335a5        7 weeks ago         142MB
+hello-world            latest              feb5d9fea6a5        5 months ago        13.3kB
+node                   9-slim              e20bb4abe4ee        3 years ago         182MB
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker pull jenkins
+Using default tag: latest
+Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker pull jenkins
+Using default tag: latest
+Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker pull jenkins
+Using default tag: latest
+Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$  docker pull jenkins docker run -p 8080:8080 --name=jenkins-master jenkins
+unknown shorthand flag: 'p' in -p
+See 'docker pull --help'.
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker pull jenkins
+Using default tag: latest
+Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$   docker run -p 8080:8080 --name=jenkins-master jenkins
+Unable to find image 'jenkins:latest' locally
+C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: manifest for jenkins:latest not found: manifest unknown: manifest unknown.
+See 'C:\Program Files\Docker Toolbox\docker.exe run --help'.
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine -v
+docker-machine.exe version 0.16.1, build cce350d7
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine
+Usage: docker-machine.exe [OPTIONS] COMMAND [arg...]
+
+Create and manage machines running Docker.
+
+Version: 0.16.1, build cce350d7
+
+Author:
+  Docker Machine Contributors - <https://github.com/docker/machine>
+
+Options:
+  --debug, -D                                           Enable debug mode
+  --storage-path, -s "C:\Users\vrush\.docker\machine"   Configures storage path [$MACHINE_STORAGE_PATH]
+  --tls-ca-cert                                         CA to verify remotes against [$MACHINE_TLS_CA_CERT]
+  --tls-ca-key                                          Private key to generate certificates [$MACHINE_TLS_CA_KEY]
+  --tls-client-cert                                     Client cert to use for TLS [$MACHINE_TLS_CLIENT_CERT]
+  --tls-client-key                                      Private key used in client TLS auth [$MACHINE_TLS_CLIENT_KEY]
+  --github-api-token                                    Token to use for requests to the Github API [$MACHINE_GITHUB_API_TOKEN]
+  --native-ssh                                          Use the native (Go-based) SSH implementation. [$MACHINE_NATIVE_SSH]
+  --bugsnag-api-token                                   BugSnag API token for crash reporting [$MACHINE_BUGSNAG_API_TOKEN]
+  --help, -h                                            show help
+  --version, -v                                         print the version
+
+Commands:
+  active                Print which machine is active
+  config                Print the connection config for machine
+  create                Create a machine
+  env                   Display the commands to set up the environment for the Docker client
+  inspect               Inspect information about a machine
+  ip                    Get the IP address of a machine
+  kill                  Kill a machine
+  ls                    List machines
+  provision             Re-provision existing machines
+  regenerate-certs      Regenerate TLS Certificates for a machine
+  restart               Restart a machine
+  rm                    Remove a machine
+  ssh                   Log into or run a command on a machine with SSH.
+  scp                   Copy files between machines
+  mount                 Mount or unmount a directory from a machine with SSHFS.
+  start                 Start a machine
+  status                Get the status of a machine
+  stop                  Stop a machine
+  upgrade               Upgrade a machine to the latest version of Docker
+  url                   Get the URL of a machine
+  version               Show the Docker Machine version or a machine docker version
+  help                  Shows a list of commands or help for one command
+
+Run 'docker-machine.exe COMMAND --help' for more information on a command.
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine --help
+Usage: docker-machine.exe [OPTIONS] COMMAND [arg...]
+
+Create and manage machines running Docker.
+
+Version: 0.16.1, build cce350d7
+
+Author:
+  Docker Machine Contributors - <https://github.com/docker/machine>
+
+Options:
+  --debug, -D                                           Enable debug mode
+  --storage-path, -s "C:\Users\vrush\.docker\machine"   Configures storage path [$MACHINE_STORAGE_PATH]
+  --tls-ca-cert                                         CA to verify remotes against [$MACHINE_TLS_CA_CERT]
+  --tls-ca-key                                          Private key to generate certificates [$MACHINE_TLS_CA_KEY]
+  --tls-client-cert                                     Client cert to use for TLS [$MACHINE_TLS_CLIENT_CERT]
+  --tls-client-key                                      Private key used in client TLS auth [$MACHINE_TLS_CLIENT_KEY]
+  --github-api-token                                    Token to use for requests to the Github API [$MACHINE_GITHUB_API_TOKEN]
+  --native-ssh                                          Use the native (Go-based) SSH implementation. [$MACHINE_NATIVE_SSH]
+  --bugsnag-api-token                                   BugSnag API token for crash reporting [$MACHINE_BUGSNAG_API_TOKEN]
+  --help, -h                                            show help
+  --version, -v                                         print the version
+
+Commands:
+  active                Print which machine is active
+  config                Print the connection config for machine
+  create                Create a machine
+  env                   Display the commands to set up the environment for the Docker client
+  inspect               Inspect information about a machine
+  ip                    Get the IP address of a machine
+  kill                  Kill a machine
+  ls                    List machines
+  provision             Re-provision existing machines
+  regenerate-certs      Regenerate TLS Certificates for a machine
+  restart               Restart a machine
+  rm                    Remove a machine
+  ssh                   Log into or run a command on a machine with SSH.
+  scp                   Copy files between machines
+  mount                 Mount or unmount a directory from a machine with SSHFS.
+  start                 Start a machine
+  status                Get the status of a machine
+  stop                  Stop a machine
+  upgrade               Upgrade a machine to the latest version of Docker
+  url                   Get the URL of a machine
+  version               Show the Docker Machine version or a machine docker version
+  help                  Shows a list of commands or help for one command
+
+Run 'docker-machine.exe COMMAND --help' for more information on a command.
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine create --driver virtualbox manager1
+Running pre-create checks...
+Creating machine...
+(manager1) Copying C:\Users\vrush\.docker\machine\cache\boot2docker.iso to C:\Users\vrush\.docker\machine\machines\manager1\boot2docker.iso...
+(manager1) Creating VirtualBox VM...
+(manager1) Creating SSH key...
+(manager1) Starting the VM...
+(manager1) Check network to re-create if needed...
+(manager1) Windows might ask for the permission to configure a dhcp server. Sometimes, such confirmation window is minimized in the taskbar.
+(manager1) Waiting for an IP...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+Detecting the provisioner...
+Provisioning with boot2docker...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+Checking connection to Docker...
+Docker is up and running!
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: C:\Program Files\Docker Toolbox\docker-machine.exe env manager1
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine.exe env manager1
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.101:2376"
+export DOCKER_CERT_PATH="C:\Users\vrush\.docker\machine\machines\manager1"
+export DOCKER_MACHINE_NAME="manager1"
+export COMPOSE_CONVERT_WINDOWS_PATHS="true"
+# Run this command to configure your shell:
+# eval $("C:\Program Files\Docker Toolbox\docker-machine.exe" env manager1)
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine.exe ls
+NAME       ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER      ERRORS
+default    *        virtualbox   Running   tcp://192.168.99.100:2376           v19.03.12
+manager1   -        virtualbox   Running   tcp://192.168.99.101:2376           v19.03.12
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine.exe ip manager1
+192.168.99.101
+
+vrush@LAPTOP-PSDVQHIL MINGW64 /c/Program Files/Docker Toolbox
+$ docker-machine.exe ssh manager1
