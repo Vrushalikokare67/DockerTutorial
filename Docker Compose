@@ -1,0 +1,184 @@
+vrushali@ubuntu:~$ sudo apt  install docker-compose
+[sudo] password for vrushali: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  python3-attr python3-cached-property python3-distutils python3-docker
+  python3-dockerpty python3-docopt python3-importlib-metadata
+  python3-jsonschema python3-lib2to3 python3-more-itertools python3-pyrsistent
+  python3-setuptools python3-texttable python3-websocket python3-zipp
+Suggested packages:
+  python-attr-doc python-jsonschema-doc python-setuptools-doc
+The following NEW packages will be installed:
+  docker-compose python3-attr python3-cached-property python3-distutils
+  python3-docker python3-dockerpty python3-docopt python3-importlib-metadata
+  python3-jsonschema python3-lib2to3 python3-more-itertools python3-pyrsistent
+  python3-setuptools python3-texttable python3-websocket python3-zipp
+0 upgraded, 16 newly installed, 0 to remove and 19 not upgraded.
+Need to get 993 kB of archives.
+After this operation, 6,155 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-cached-property all 1.5.1-4 [10.9 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-websocket all 0.53.0-2ubuntu1 [32.3 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-docker all 4.1.0-1 [83.8 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-dockerpty all 0.4.1-2 [11.1 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-docopt all 0.6.2-2.2ubuntu1 [19.7 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-attr all 19.3.0-2 [33.9 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-lib2to3 all 3.8.10-0ubuntu1~20.04 [76.3 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-distutils all 3.8.10-0ubuntu1~20.04 [141 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-setuptools all 45.2.0-1 [330 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-more-itertools all 4.2.0-1build1 [39.4 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-zipp all 1.0.0-1 [5,312 B]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-importlib-metadata all 1.5.0-1 [9,992 B]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-pyrsistent amd64 0.15.5-1build1 [52.1 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-jsonschema all 3.2.0-0ubuntu2 [43.1 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-texttable all 1.6.2-2 [11.0 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 docker-compose all 1.25.0-1 [92.7 kB]
+Fetched 993 kB in 24s (40.6 kB/s)                                              
+Selecting previously unselected package python3-cached-property.
+(Reading database ... 157627 files and directories currently installed.)
+Preparing to unpack .../00-python3-cached-property_1.5.1-4_all.deb ...
+Unpacking python3-cached-property (1.5.1-4) ...
+Selecting previously unselected package python3-websocket.
+Preparing to unpack .../01-python3-websocket_0.53.0-2ubuntu1_all.deb ...
+Unpacking python3-websocket (0.53.0-2ubuntu1) ...
+Selecting previously unselected package python3-docker.
+Preparing to unpack .../02-python3-docker_4.1.0-1_all.deb ...
+Unpacking python3-docker (4.1.0-1) ...
+Selecting previously unselected package python3-dockerpty.
+Preparing to unpack .../03-python3-dockerpty_0.4.1-2_all.deb ...
+Unpacking python3-dockerpty (0.4.1-2) ...
+Selecting previously unselected package python3-docopt.
+Preparing to unpack .../04-python3-docopt_0.6.2-2.2ubuntu1_all.deb ...
+Unpacking python3-docopt (0.6.2-2.2ubuntu1) ...
+Selecting previously unselected package python3-attr.
+Preparing to unpack .../05-python3-attr_19.3.0-2_all.deb ...
+Unpacking python3-attr (19.3.0-2) ...
+Selecting previously unselected package python3-lib2to3.
+Preparing to unpack .../06-python3-lib2to3_3.8.10-0ubuntu1~20.04_all.deb ...
+Unpacking python3-lib2to3 (3.8.10-0ubuntu1~20.04) ...
+Selecting previously unselected package python3-distutils.
+Preparing to unpack .../07-python3-distutils_3.8.10-0ubuntu1~20.04_all.deb ...
+Unpacking python3-distutils (3.8.10-0ubuntu1~20.04) ...
+Selecting previously unselected package python3-setuptools.
+Preparing to unpack .../08-python3-setuptools_45.2.0-1_all.deb ...
+Unpacking python3-setuptools (45.2.0-1) ...
+Selecting previously unselected package python3-more-itertools.
+Preparing to unpack .../09-python3-more-itertools_4.2.0-1build1_all.deb ...
+Unpacking python3-more-itertools (4.2.0-1build1) ...
+Selecting previously unselected package python3-zipp.
+Preparing to unpack .../10-python3-zipp_1.0.0-1_all.deb ...
+Unpacking python3-zipp (1.0.0-1) ...
+Selecting previously unselected package python3-importlib-metadata.
+Preparing to unpack .../11-python3-importlib-metadata_1.5.0-1_all.deb ...
+Unpacking python3-importlib-metadata (1.5.0-1) ...
+Selecting previously unselected package python3-pyrsistent:amd64.
+Preparing to unpack .../12-python3-pyrsistent_0.15.5-1build1_amd64.deb ...
+Unpacking python3-pyrsistent:amd64 (0.15.5-1build1) ...
+Selecting previously unselected package python3-jsonschema.
+Preparing to unpack .../13-python3-jsonschema_3.2.0-0ubuntu2_all.deb ...
+Unpacking python3-jsonschema (3.2.0-0ubuntu2) ...
+Selecting previously unselected package python3-texttable.
+Preparing to unpack .../14-python3-texttable_1.6.2-2_all.deb ...
+Unpacking python3-texttable (1.6.2-2) ...
+Selecting previously unselected package docker-compose.
+Preparing to unpack .../15-docker-compose_1.25.0-1_all.deb ...
+Unpacking docker-compose (1.25.0-1) ...
+Setting up python3-cached-property (1.5.1-4) ...
+Setting up python3-more-itertools (4.2.0-1build1) ...
+Setting up python3-attr (19.3.0-2) ...
+Setting up python3-texttable (1.6.2-2) ...
+Setting up python3-docopt (0.6.2-2.2ubuntu1) ...
+Setting up python3-zipp (1.0.0-1) ...
+Setting up python3-pyrsistent:amd64 (0.15.5-1build1) ...
+Setting up python3-lib2to3 (3.8.10-0ubuntu1~20.04) ...
+Setting up python3-websocket (0.53.0-2ubuntu1) ...
+update-alternatives: using /usr/bin/python3-wsdump to provide /usr/bin/wsdump (w
+sdump) in auto mode
+Setting up python3-dockerpty (0.4.1-2) ...
+Setting up python3-distutils (3.8.10-0ubuntu1~20.04) ...
+Setting up python3-importlib-metadata (1.5.0-1) ...
+Setting up python3-setuptools (45.2.0-1) ...
+Setting up python3-docker (4.1.0-1) ...
+Setting up python3-jsonschema (3.2.0-0ubuntu2) ...
+Setting up docker-compose (1.25.0-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+vrushali@ubuntu:~$ cd Desktop/
+vrushali@ubuntu:~/Desktop$ mkdir DockerComposeFile
+vrushali@ubuntu:~/Desktop$ cd DockerComposeFile
+vrushali@ubuntu:~/Desktop/DockerComposeFile$ touch docker-compose.yml
+vrushali@ubuntu:~/Desktop/DockerComposeFile$ ls
+docker-compose.yml
+vrushali@ubuntu:~/Desktop/DockerComposeFile$ vi docker-compose.yml
+vrushali@ubuntu:~/Desktop/DockerComposeFile$ cat docker-compose.yml
+services:
+
+    web:
+      image: nginx
+
+    database:
+    image:redis
+vrushali@ubuntu:~/Desktop/DockerComposeFile$ sudo docker-compose -d --scale database=4
+Define and run multi-container applications with Docker.
+
+Usage:
+  docker-compose [-f <arg>...] [options] [COMMAND] [ARGS...]
+  docker-compose -h|--help
+
+Options:
+  -f, --file FILE             Specify an alternate compose file
+                              (default: docker-compose.yml)
+  -p, --project-name NAME     Specify an alternate project name
+                              (default: directory name)
+  --verbose                   Show more output
+  --log-level LEVEL           Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  --no-ansi                   Do not print ANSI control characters
+  -v, --version               Print version and exit
+  -H, --host HOST             Daemon socket to connect to
+
+  --tls                       Use TLS; implied by --tlsverify
+  --tlscacert CA_PATH         Trust certs signed only by this CA
+  --tlscert CLIENT_CERT_PATH  Path to TLS certificate file
+  --tlskey TLS_KEY_PATH       Path to TLS key file
+  --tlsverify                 Use TLS and verify the remote
+  --skip-hostname-check       Don't check the daemon's hostname against the
+                              name specified in the client certificate
+  --project-directory PATH    Specify an alternate working directory
+                              (default: the path of the Compose file)
+  --compatibility             If set, Compose will attempt to convert keys
+                              in v3 files to their non-Swarm equivalent
+  --env-file PATH             Specify an alternate environment file
+
+Commands:
+  build              Build or rebuild services
+  bundle             Generate a Docker bundle from the Compose file
+  config             Validate and view the Compose file
+  create             Create services
+  down               Stop and remove containers, networks, images, and volumes
+  events             Receive real time events from containers
+  exec               Execute a command in a running container
+  help               Get help on a command
+  images             List images
+  kill               Kill containers
+  logs               View output from containers
+  pause              Pause services
+  port               Print the public port for a port binding
+  ps                 List containers
+  pull               Pull service images
+  push               Push service images
+  restart            Restart services
+  rm                 Remove stopped containers
+  run                Run a one-off command
+  scale              Set number of containers for a service
+  start              Start services
+  stop               Stop services
+  top                Display the running processes
+  unpause            Unpause services
+  up                 Create and start containers
+  version            Show the Docker-Compose version information
+vrushali@ubuntu:~/Desktop/DockerComposeFile$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+
+
