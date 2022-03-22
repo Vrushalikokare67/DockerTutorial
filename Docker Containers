@@ -1,0 +1,472 @@
+vrushali@ubuntu:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete 
+Digest: sha256:6d60b42fdd5a0aa8a718b5f2eab139868bb4fa9a03c9fe1a59ed4946317c4318
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+vrushali@ubuntu:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+4794597f16ab   ubuntu    "bash"    33 minutes ago   Up 33 minutes             PUCSD
+2b2aceb0d015   ubuntu    "bash"    48 minutes ago   Up 48 minutes             iauro5
+vrushali@ubuntu:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+90aa88ff2c14   hello-world   "/hello"   54 seconds ago   Exited (0) 53 seconds ago             heuristic_elbakyan
+4794597f16ab   ubuntu        "bash"     33 minutes ago   Up 33 minutes                         PUCSD
+b076a8be2234   ubuntu        "bash"     34 minutes ago   Exited (0) 34 minutes ago             cranky_moser
+2b2aceb0d015   ubuntu        "bash"     48 minutes ago   Up 48 minutes                         iauro5
+
+vrushali@ubuntu:~$ sudo docker run -itd --name=iauro8 ubuntu
+323e3992c185ddd83ec32018ba55a3f03899f30fcbc8ecf27768eb6770b860da
+vrushali@ubuntu:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+323e3992c185   ubuntu    "bash"    21 seconds ago   Up 19 seconds             iauro8
+8c21692036d8   ubuntu    "bash"    3 minutes ago    Up 3 minutes              myubuntu1
+4794597f16ab   ubuntu    "bash"    38 minutes ago   Up 38 minutes             PUCSD
+2b2aceb0d015   ubuntu    "bash"    54 minutes ago   Up 54 minutes             iauro5
+vrushali@ubuntu:~$ sudo docker start iauro8
+iauro8
+vrushali@ubuntu:~$ ls
+cmd      Documents  hello_world  listings   Music     Public     Videos
+Desktop  Downloads  journal      lsmod.log  Pictures  Templates  vrush
+vrushali@ubuntu:~$ sudo docker stop iauro8
+iauro8
+vrushali@ubuntu:~$ sudo docker top iauro8
+Error response from daemon: Container 323e3992c185ddd83ec32018ba55a3f03899f30fcbc8ecf27768eb6770b860da is not running
+vrushali@ubuntu:~$ sudo docker stats iauro8
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+323e3992c185   iauro8    0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
