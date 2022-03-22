@@ -1,0 +1,24 @@
+vrushali@ubuntu:~$ ls
+cmd      Documents  hello_world  listings   Music     Public     Videos
+Desktop  Downloads  journal      lsmod.log  Pictures  Templates  vrush
+vrushali@ubuntu:~$ cd Downloads
+vrushali@ubuntu:~/Downloads$ mkdir DockerFiles
+vrushali@ubuntu:~/Downloads$ cd DockerFiles/
+vrushali@ubuntu:~/Downloads/DockerFiles$ touch DockerFiles
+vrushali@ubuntu:~/Downloads/DockerFiles$ ls
+DockerFiles
+vrushali@ubuntu:~/Downloads/DockerFiles$ vi DockerFiles
+vrushali@ubuntu:~/Downloads/DockerFiles$ cat DockerFiles
+#getting base image ubuntu
+
+  FROM ubuntu
+
+  RUN apt-get update
+
+  CMD ["echo","Hello World...!from my docker images"]
+
+vrushali@ubuntu:~/Downloads/DockerFiles$ sudo docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+ubuntu        latest    ff0fea8310f3   4 days ago     72.8MB
+nginx         latest    f2f70adc5d89   4 days ago     142MB
+hello-world   latest    feb5d9fea6a5   5 months ago   13.3kB
